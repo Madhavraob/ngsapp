@@ -15,7 +15,7 @@ import { ToDoEffects } from './store/effects/two.effect';
   imports: [
     CommonModule,
     TwoRoutingModule,
-    StoreModule.forFeature('two', {todos: ToDoReducer}),
+    StoreModule.forFeature('two', ToDoReducer),
     EffectsModule.forFeature([ToDoEffects]),
   ],
   providers: [TwosrvService]

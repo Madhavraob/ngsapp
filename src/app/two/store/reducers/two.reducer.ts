@@ -1,4 +1,4 @@
-import { Action, createReducer, on, createFeatureSelector } from '@ngrx/store';
+import { Action, createReducer, on, createFeatureSelector, createSelector } from '@ngrx/store';
 import * as ToDoActions from '../actions/two.action';
 import ToDoState, { initializeState } from './two.state';
 
@@ -26,6 +26,11 @@ const reducer = createReducer(
 );
 
 export const dealsChildSelctor = createFeatureSelector<ToDoState>('two');
+
+export const dealSelector = createSelector(
+  dealsChildSelctor,
+  state => state
+);
 
 export function ToDoReducer(
   state: ToDoState | undefined,

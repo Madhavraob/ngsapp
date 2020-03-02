@@ -5,7 +5,7 @@ import ToDoState from '../store/reducers/two.state';
 import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as ToDoActions from '../store/actions/two.action';
-import { dealsChildSelctor } from '../store/reducers/two.reducer'
+import { dealsChildSelctor, dealSelector } from '../store/reducers/two.reducer'
 
 @Component({
   selector: 'app-twocomp',
@@ -21,8 +21,8 @@ export class TwocompComponent implements OnInit {
 
 
   // constructor(private twosrvService: TwosrvService) { }
-  constructor(private store: Store<{ todos: ToDoState }>) {
-    this.todo$ = store.pipe(select(dealsChildSelctor));
+  constructor(private store: Store<ToDoState>) {
+    this.todo$ = store.pipe(select(dealSelector));
   }
 
   ngOnInit() {
