@@ -14,5 +14,8 @@ export class TwosrvService {
   getToDos(): Observable<any> {
     return this.httpclient.get<any>(this.ApiURL);
   }
+  createToDos(test: any): Observable<any> {
+    return this.httpclient.get<any>(this.ApiURL);
+  }
 
 }
